@@ -3,7 +3,7 @@ import './Skills.scss'
 
 import {motion} from 'framer-motion'
 import { urlFor, client } from '../../client'
-import {AppWrap} from '../../wrapper'
+import {AppWrap, MotionWrap} from '../../wrapper'
 import {Tooltip} from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 
@@ -67,7 +67,7 @@ const Skills = () => {
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
-                      <Tooltip id="exp-tooltip" />
+                      <Tooltip id="exp-tooltip" className='.skills-tooltip' effect='solid' cursor="#fff"/>
                     </motion.div>
                   </>
                 ))}
@@ -80,4 +80,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default AppWrap(MotionWrap(Skills,'app__skills'), 'skills', "app__whitebg")
