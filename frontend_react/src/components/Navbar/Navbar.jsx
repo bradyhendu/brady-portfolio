@@ -8,7 +8,7 @@ const Navbar = () => {
   const [toggle, setToggle] = React.useState(false);
   return (
     <nav className="app__navbar">
-      <div classname="app__navbar-logo">
+      <div className="app__navbar-logo">
         <img src={images.logo} alt ="logo" />
       </div>
       <ul className='app__navbar-links'>
