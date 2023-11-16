@@ -57,7 +57,7 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[images.flutter, images.redux, images.sass].map((circle, index) => ( /* TODO: Change images to languages I am proficient in */
+        {[images.cpp, images.react, images.sass].map((circle, index) => ( /* TODO: Change images to languages I am proficient in */
           <div className ="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="circle" />
           </div>

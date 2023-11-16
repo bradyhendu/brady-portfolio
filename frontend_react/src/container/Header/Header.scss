@@ -178,6 +178,8 @@
       width: 100%;
       object-fit: contain;
       z-index: 1;
+      @media screen and (min-width: 1200px) {
+      }
     }
   
     .overlay_circle {
