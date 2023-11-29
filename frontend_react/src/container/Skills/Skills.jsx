@@ -47,32 +47,34 @@ const Skills = () => {
         </motion.div>
 
         <div className="app__skills-exp">
-          {experiences.map((experience) => (
-            <motion.div
-              className="app__skills-exp-item"
-              key={experience.year}
-            >
-              <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
-              </div>
-              <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
-                  <>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
-                      data-tooltip-id='exp-tooltip'
-                      data-tooltip-content={work.desc}
-                    >
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
-                      <Tooltip id="exp-tooltip" className='.skills-tooltip' effect='solid' cursor="#fff"/>
-                    </motion.div>
-                  </>
-                ))}
+          {experiences
+            .sort((a,b) => b.year - a.year)
+            .map((experience) => (
+              <motion.div
+                className="app__skills-exp-item"
+                key={experience.year}
+              >
+                <div className="app__skills-exp-year">
+                  <p className="bold-text">{experience.year}</p>
+                </div>
+                <motion.div className="app__skills-exp-works">
+                  {experience.works.map((work) => (
+                    <>
+                      <motion.div
+                        whileInView={{ opacity: [0, 1] }}
+                        transition={{ duration: 0.5 }}
+                        className="app__skills-exp-work"
+                        data-tooltip-id='exp-tooltip'
+                        data-tooltip-content={work.desc}
+                      >
+                        <h4 className="bold-text">{work.name}</h4>
+                        <p className="p-text">{work.company}</p>
+                        <Tooltip id="exp-tooltip" className='.skills-tooltip' effect='solid' cursor="#fff"/>
+                      </motion.div>
+                    </>
+                  ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
           ))}
         </div>
       </div>
